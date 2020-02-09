@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include autofill_indiazipcode *.css
+recursive-include autofill_indiazipcode *.csv
+recursive-include autofill_indiazipcode *.html
+recursive-include autofill_indiazipcode *.ico
+recursive-include autofill_indiazipcode *.js
+recursive-include autofill_indiazipcode *.json
+recursive-include autofill_indiazipcode *.md
+recursive-include autofill_indiazipcode *.png
+recursive-include autofill_indiazipcode *.py
+recursive-include autofill_indiazipcode *.svg
+recursive-include autofill_indiazipcode *.txt
+recursive-exclude autofill_indiazipcode *.pyc
