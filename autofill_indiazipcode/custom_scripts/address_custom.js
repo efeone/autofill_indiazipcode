@@ -47,10 +47,21 @@ frappe.ui.form.on("Address", {
 });
 
 var set_value_by_post_office = function (frm, result, post_office){
+	let post_office_2 = post_office.replace(".O","O").replace("("," (");
+	let state = result["statename"][post_office];
 	frm.set_value("pincode", result["pincode"][post_office]);
-	frm.set_value("post_office", post_office);
+	frm.set_value("post_office", post_office_2);
 	frm.set_value("country", "India");
-	frm.set_value("state", result["statename"][post_office]);
+	frm.set_value("state", sentenceCase(state));
 	frm.set_value("county", result["Districtname"][post_office]);
 	frm.set_value("taluk", result["Taluk"][post_office]);	
 }
+
+function sentenceCase (str) {
+	if ((str===null) || (str===''))
+		 return false;
+	else
+	 str = str.toString();
+  
+   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  }
