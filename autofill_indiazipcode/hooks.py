@@ -11,6 +11,10 @@ app_color = "grey"
 app_email = "vinhnguyen.t090@gmail.com"
 app_license = "MIT"
 
+fixtures = [
+	# "Territory",
+]
+
 # Includes in <head>
 # ------------------
 
