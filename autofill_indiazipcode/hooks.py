@@ -86,8 +86,14 @@ doctype_js = {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
-#	}
+# 	}
 # }
+
+doc_events = {
+	"Address": {
+		"on_update": "autofill_indiazipcode.api.on_update_address",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
