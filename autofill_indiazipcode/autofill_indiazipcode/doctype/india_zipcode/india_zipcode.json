@@ -1,0 +1,152 @@
+{
+ "creation": "2020-02-20 19:28:22.339422",
+ "doctype": "DocType",
+ "document_type": "System",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pincode",
+  "officename",
+  "officetype",
+  "telephone",
+  "col_1",
+  "taluk",
+  "districtname",
+  "statename",
+  "section_1",
+  "divisionname",
+  "regionname",
+  "circlename",
+  "col_2",
+  "related_headoffice",
+  "related_suboffice",
+  "deliverystatus",
+  "longitude",
+  "latitude"
+ ],
+ "fields": [
+  {
+   "fieldname": "officename",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Office Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Pincode",
+   "reqd": 1
+  },
+  {
+   "fieldname": "officetype",
+   "fieldtype": "Data",
+   "label": "Office Type"
+  },
+  {
+   "fieldname": "deliverystatus",
+   "fieldtype": "Data",
+   "label": "Delivery Status"
+  },
+  {
+   "fieldname": "divisionname",
+   "fieldtype": "Data",
+   "label": "Division Name"
+  },
+  {
+   "fieldname": "regionname",
+   "fieldtype": "Data",
+   "label": "Region Name"
+  },
+  {
+   "fieldname": "circlename",
+   "fieldtype": "Data",
+   "label": "Circle Name"
+  },
+  {
+   "fieldname": "taluk",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Taluk"
+  },
+  {
+   "fieldname": "districtname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "District Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "statename",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "State Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "telephone",
+   "fieldtype": "Data",
+   "label": "Telephone"
+  },
+  {
+   "fieldname": "related_suboffice",
+   "fieldtype": "Data",
+   "label": "Related Suboffice"
+  },
+  {
+   "fieldname": "related_headoffice",
+   "fieldtype": "Data",
+   "label": "Related Headoffice"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "col_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "col_2",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "modified": "2020-02-21 09:25:46.603169",
+ "modified_by": "Administrator",
+ "module": "Autofill Indiazipcode",
+ "name": "India Zipcode",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "officename"
+}

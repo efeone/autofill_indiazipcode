@@ -9,28 +9,27 @@ frappe.ui.form.on("Address", {
 				},
 				callback: function (r) {
 					if(r.message){
-						let result = JSON.parse(r.message)
-						let arr_pincode = Object.keys(result["pincode"]);
+						let result = r.message;
 
-						if (arr_pincode.length>1){
+						if (Object.keys(result).length>1){
+							let arr_post_office = Object.keys(result)
 							frappe.prompt(
 								{
 									label: "Post Office",
 									fieldtype: "Select",
 									reqd: 1,
 									fieldname:'post_office',
-									options: arr_pincode,
-									default: arr_pincode[0]								
+									options: arr_post_office,
+									default: arr_post_office[0]								
 								},
 								function(data) {
 									let post_office = data.post_office;
-									set_value_by_post_office(frm, result, post_office);
-									
+									set_value_by_post_office(frm, result[post_office]);									
 								}
 							)
-						}else if(arr_pincode.length==1){
-							let post_office = arr_pincode[0];
-							set_value_by_post_office(frm, result, post_office);
+						}else if(Object.keys(result).length==1){
+							let post_office = result[Object.keys(result)[0]]["officename"];
+							set_value_by_post_office(frm, result[post_office]);
 						}else{
 							frappe.msgprint(__("This Postal Code does not match."));
 							frm.set_value("pincode", pincode);
@@ -46,22 +45,11 @@ frappe.ui.form.on("Address", {
 	},
 });
 
-var set_value_by_post_office = function (frm, result, post_office){
-	let post_office_2 = post_office.replace(".O","O").replace("("," (");
-	let state = result["statename"][post_office];
-	frm.set_value("pincode", result["pincode"][post_office]);
-	frm.set_value("post_office", post_office_2);
+var set_value_by_post_office = function (frm, result){
+	frm.set_value("pincode", result["pincode"]);
+	frm.set_value("post_office", result["officename"]);
 	frm.set_value("country", "India");
-	frm.set_value("state", sentenceCase(state));
-	frm.set_value("county", result["Districtname"][post_office]);
-	frm.set_value("taluk", result["Taluk"][post_office]);	
+	frm.set_value("state", result["statename"]);
+	frm.set_value("county", result["districtname"]);
+	frm.set_value("taluk", result["taluk"]);	
 }
-
-function sentenceCase (str) {
-	if ((str===null) || (str===''))
-		 return false;
-	else
-	 str = str.toString();
-  
-   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  }
