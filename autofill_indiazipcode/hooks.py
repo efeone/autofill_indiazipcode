@@ -4,11 +4,11 @@ from . import __version__ as app_version
 
 app_name = "autofill_indiazipcode"
 app_title = "Autofill Indiazipcode"
-app_publisher = "vinhnguyen.t090@gmail.com"
+app_publisher = "iWEX Infomatics"
 app_description = "Autofill India Zipcode"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
-app_email = "vinhnguyen.t090@gmail.com"
+app_email = "emails@iwex.in"
 app_license = "MIT"
 
 fixtures = [
